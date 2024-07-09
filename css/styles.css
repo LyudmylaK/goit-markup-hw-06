@@ -614,24 +614,19 @@ ul {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:hover {
-  background-color: #404bbf;
-  border: none;
-}
-
+.modal-button:hover,
 .modal-button:focus {
   background-color: #404bbf;
   border: none;
 }
 
 .icon-modal-button {
+  fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:hover > .icon-modal-button {
-  fill: #ffffff;
-}
-.modal-button:focus > .icon-modal-button {
+.modal-button:hover .icon-modal-button,
+.modal-button:focus .icon-modal-button {
   fill: #ffffff;
 }
 
