@@ -589,7 +589,6 @@ ul {
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 72px 24px 24px 24px;
-  overflow-y: auto;
 }
 
 .modal-overlay .is-open {
@@ -615,7 +614,11 @@ ul {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:hover,
+.modal-button:hover {
+  background-color: #404bbf;
+  border: none;
+}
+
 .modal-button:focus {
   background-color: #404bbf;
   border: none;
@@ -625,7 +628,9 @@ ul {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button:hover > .icon-modal-button,
+.modal-button:hover > .icon-modal-button {
+  fill: #ffffff;
+}
 .modal-button:focus > .icon-modal-button {
   fill: #ffffff;
 }
