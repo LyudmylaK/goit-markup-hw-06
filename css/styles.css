@@ -155,7 +155,7 @@ ul {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(./images/people-office.jpg);
+    url(../images/people-office.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -501,65 +501,51 @@ ul {
   margin-right: 80px;
 }
 
-.footer-form {
-  display: flex;
-  gap: 24px;
-}
-
-.footer-label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.footer-sub {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: #fff;
-  gap: 16px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.footer-form {
+  display: flex;
+  gap: 24px;
 }
 
 .footer-input {
-  border: 1px solid #fff;
-  border-radius: 4px;
   width: 264px;
   height: 40px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background-color: #2e2f42;
-  padding: 8px 0px 8px 16px;
-}
-
-.footer-input::placeholder {
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  border: 1px solid #fff;
+  background-color: transparent;
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #fff;
-}
-
-.footer-input:placeholder-shown {
+  padding-left: 16px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
   color: #fff;
 }
 
 .footer-button {
-  display: flex;
-  border-radius: 4px;
-  padding: 8px 24px;
-  width: 165px;
+  min-width: 165px;
   height: 40px;
-  background-color: #4d5ae5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  text-align: center;
   color: #fff;
-  gap: 16px;
-  margin-top: 40px;
+  background-color: #4d5ae5;
   cursor: pointer;
   border: none;
+  border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -568,18 +554,41 @@ ul {
   background-color: #404bbf;
 }
 
+.icon-button {
+  margin-left: 16px;
+}
+
 .modal-overlay {
-  background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 1;
   pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 408px;
+  min-height: 584px;
+  background-color: #fcfcfc;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 24px 24px 24px;
+  overflow-y: auto;
 }
 
 .modal-overlay .is-open {
@@ -587,43 +596,36 @@ ul {
   pointer-events: auto;
 }
 
-.modal {
-  border-radius: 4px;
-  max-width: 408px;
-  max-height: 584px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
-    0 2px 1px 0 rgba(0, 0, 0, 0.2);
-  background-color: #fcfcfc;
-  padding: 24px;
-  overflow-y: auto;
-}
-
-.overlay-button {
-  background-color: #e7e9fc;
+.modal-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 24px;
+  padding: 0px;
   cursor: pointer;
-  transition: background-color fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.overlay-button:hover,
-.overlay-button:focus {
+.modal-button:hover,
+.modal-button:focus {
   background-color: #404bbf;
-  fill: #fff;
+  border: none;
+  fill: #ffffff;
 }
 
-.button-overl {
-  display: flex;
-  justify-content: flex-end;
+.icon-modal-button {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.group-title {
+.modal-title {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.02em;
@@ -631,10 +633,9 @@ ul {
   color: #2e2f42;
   margin-bottom: 16px;
 }
-.form-overlay {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+
+.input-wrapper {
+  margin-bottom: 8px;
 }
 
 .form-label {
@@ -642,104 +643,76 @@ ul {
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  margin-bottom: 4px;
 }
 
-.input-label {
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
+.input-svg {
+  position: relative;
+}
+
+.input-modal {
   width: 100%;
   height: 40px;
-  outline: none;
+  border-radius: 4px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  background-color: transparent;
   padding-left: 38px;
+  outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-label:focus {
+.input-modal:hover,
+.input-modal:focus {
   border-color: #4d5ae5;
 }
 
-.input-label:focus + .input-icon {
+.input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.input-modal:hover + .input-icon,
+.input-modal:focus + .input-icon {
   fill: #4d5ae5;
 }
 
-.input-lab {
+.input-wrap {
+  margin-bottom: 16px;
+}
+
+.input-text {
+  width: 100%;
+  height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  width: 360px;
-  height: 120px;
-  padding-top: 8px;
-  padding-left: 16px;
+  background-color: transparent;
+  padding: 8px 16px;
+  outline: transparent;
+  resize: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.input-lab:focus-within {
-  border-color: #4d5ae5;
-}
-
-.input-lab::placeholder {
+.input-text::placeholder {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
 }
 
-.input-wrapper {
-  position: relative;
-  width: 360px;
-  margin-top: 4px;
-}
-
-.input-wrap {
-  margin-top: 4px;
-}
-
-.input-icon {
-  position: absolute;
-  width: 18px;
-  height: 24px;
-  left: 0;
-  fill: #2e2f42;
-  margin: 8px auto 8px 16px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.button-send {
-  border: none;
-  border-radius: 4px;
-  padding: 16px 32px;
-  width: 169px;
-  height: 56px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background-color: #4d5ae5;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  text-align: center;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.button-send:hover,
-.button-send:focus {
-  background-color: #404bbf;
-}
-
-.button-end {
-  display: flex;
-  justify-content: center;
+.input-text:hover,
+.input-text:focus {
+  border-color: #4d5ae5;
 }
 
 .checkbox {
-  margin-right: 8px;
-}
-
-.checkbox::placeholder {
-  border-radius: 2px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
+  margin-bottom: 24px;
 }
 
 .checkbox-label {
@@ -749,9 +722,52 @@ ul {
   color: #8e8f99;
 }
 
-.checkbox-label-part {
-  line-height: 1.33;
+.checkbox-svg {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type="checkbox"]:checked > .checkbox-svg {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
+.modal-link {
   text-decoration: underline;
-  text-decoration-skip-ink: none;
   color: #4d5ae5;
+}
+
+.button-send {
+  display: block;
+  min-width: 169px;
+  height: 56px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  cursor: pointer;
+  background-color: #4d5ae5;
+  border: none;
+  border-radius: 4px;
+  padding: 16px 32px;
+  margin-left: 92px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-send:hover,
+.button-send:focus {
+  background-color: #404bbf;
 }
