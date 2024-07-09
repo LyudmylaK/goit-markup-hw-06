@@ -157,7 +157,7 @@ ul {
     ),
     url(../images/people-office.jpg);
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   max-width: 1440px;
 }
@@ -557,7 +557,7 @@ ul {
 .icon-button {
   margin-left: 16px;
 }
-
+/*
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -571,16 +571,16 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
 }
-
+*/
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 408px;
+  width: 408px;
   min-height: 584px;
   background-color: #fcfcfc;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
@@ -618,11 +618,15 @@ ul {
 .modal-button:focus {
   background-color: #404bbf;
   border: none;
-  fill: #ffffff;
 }
 
 .icon-modal-button {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button:hover > .icon-modal-button,
+.modal-button:focus > .icon-modal-button {
+  fill: #ffffff;
 }
 
 .modal-title {
@@ -737,7 +741,7 @@ ul {
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-input[type="checkbox"]:checked > .checkbox-svg {
+.input-checkbox:checked .checkbox-svg {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
