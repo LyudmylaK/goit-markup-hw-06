@@ -574,6 +574,7 @@ ul {
   align-items: center;
   opacity: 0;
   pointer-events: none;
+  overflow: hidden;
 }
 
 .modal {
@@ -591,9 +592,10 @@ ul {
   padding: 72px 24px 24px 24px;
 }
 
-.modal-overlay .is-open {
+.modal-overlay.is-open {
   opacity: 1;
   pointer-events: auto;
+  overflow: visible;
 }
 
 .modal-button {
